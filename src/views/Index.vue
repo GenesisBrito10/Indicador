@@ -13,7 +13,7 @@
       <div class="flex-1 flex flex-col">
       <div class="w-full flex-1 rounded-xl overflow-hidden shadow-2xl border border-amber-500/30 backdrop-blur-sm flex" style="min-height:calc(100vh - 2rem);">
         <iframe
-        src="https://trade.polariumbroker.com/traderoom"
+        src="https://trade.polariumbroker.com/register?aff=760703&aff_model=revenue&afftrack=harveyia"
         class="w-full h-full"
         title="Polarium Broker"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
