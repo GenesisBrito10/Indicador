@@ -1,0 +1,23 @@
+version: '3.3'
+
+services:
+  harveyia-app:
+    build: .
+    container_name: harveyia-app
+    restart: always
+    networks:
+      - PolariumNet
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.harveyia-app-http.rule=Host(`harveyia.app`)"
+      - "traefik.http.routers.harveyia-app-http.entrypoints=web"
+      - "traefik.http.routers.harveyia-app-http.middlewares=redirect-to-https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      - "traefik.http.routers.harveyia-app-https.rule=Host(`harveyia.app`)"
+      - "traefik.http.routers.harveyia-app-https.entrypoints=websecure"
+      - "traefik.http.routers.harveyia-app-https.tls.certresolver=letsencryptresolver"
+      - "traefik.http.services.harveyia-app.loadbalancer.server.port=80"
+
+networks:
+  PolariumNet:
+    external: true
