@@ -2,20 +2,33 @@ version: '3.3'
 
 services:
   harveyia-app:
-    build: .
-    container_name: harveyia-app
-    restart: always
+    # Aponta para a sua imagem no Docker Hub
+    image: genesisbrito/harveyia-app:latest
     networks:
       - PolariumNet
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
     labels:
+      # --- Configuração do Traefik ---
       - "traefik.enable=true"
+      - "traefik.docker.network=PolariumNet"
+
+      # --- Roteador HTTP para redirecionamento ---
       - "traefik.http.routers.harveyia-app-http.rule=Host(`harveyia.app`)"
       - "traefik.http.routers.harveyia-app-http.entrypoints=web"
       - "traefik.http.routers.harveyia-app-http.middlewares=redirect-to-https"
+
+      # --- Middleware de Redirecionamento ---
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+      # --- Roteador HTTPS ---
       - "traefik.http.routers.harveyia-app-https.rule=Host(`harveyia.app`)"
       - "traefik.http.routers.harveyia-app-https.entrypoints=websecure"
       - "traefik.http.routers.harveyia-app-https.tls.certresolver=letsencryptresolver"
+
+      # --- Serviço ---
       - "traefik.http.services.harveyia-app.loadbalancer.server.port=80"
 
 networks:
