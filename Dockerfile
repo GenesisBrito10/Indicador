@@ -13,7 +13,7 @@ FROM node:lts-alpine
 WORKDIR /app
 # Copia as dependências de produção
 COPY package*.json ./
-RUN npm install --omit=dev
+RUN npm install 
 # Copia os ficheiros da aplicação e os ficheiros compilados
 COPY --from=builder /app/dist ./dist
 COPY server.js ./
