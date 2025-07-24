@@ -151,8 +151,26 @@ export default {
     }
   },
   methods: {
+    logToServer(level, message, data = null) {
+      // O URL do seu backend. Em produção, pode ser um URL relativo.
+      const logUrl = '/api/log';
+
+      axios.post(logUrl, {
+        level: level,       // ex: 'info', 'warn', 'error'
+        message: message,   // A mensagem de log
+        data: data          // Dados adicionais (opcional)
+      }).catch(error => {
+        // Log de erro no navegador se a API de log falhar
+        console.error('Falha ao enviar log para o servidor:', error);
+      });
+    },
     gerarSinal() {
       if (!this.ativoSelecionado || !this.expiracaoSelecionada || this.sinalEmAndamento || this.analisandoSinal) return;
+
+      this.logToServer('info', 'Tentativa de gerar sinal', {
+          ativo: this.ativoSelecionado,
+          expiracao: this.expiracaoSelecionada
+      });
       
       this.resetarSinal();
       this.analisandoSinal = true;
@@ -196,6 +214,10 @@ export default {
         this.sinal.direcao = direcaoEscolhida;
         this.sinal.gales = 2;
         this.sinal.assertividade = taxaAssertividade;
+
+        this.logToServer('info', 'Sinal gerado com sucesso', {
+            sinal: this.sinal
+        });
         
         setTimeout(() => {
           this.sinalEmAndamento = false;

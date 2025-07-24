@@ -29,7 +29,7 @@ services:
       - "traefik.http.routers.harveyia-app-https.tls.certresolver=letsencryptresolver"
 
       # --- Serviço ---
-      - "traefik.http.services.harveyia-app.loadbalancer.server.port=80"
+      - "traefik.http.services.harveyia-app.loadbalancer.server.port=2002"
 
 networks:
   PolariumNet:
