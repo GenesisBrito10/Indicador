@@ -1,20 +1,15 @@
 <template>
   <div
     class="min-h-screen w-screen text-white"
-    style="
-      background-image: url('/img/backgrounds/bg-dark.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    "
+    
   >
     <div class="w-full h-full max-w-[2000px] mx-auto flex flex-col md:flex-row gap-4 p-2 md:p-4">
       
       <div class="flex-1 flex flex-col">
         <div class="w-full flex-1 rounded-xl overflow-hidden shadow-2xl border border-amber-500/30 backdrop-blur-sm flex" style="min-height:calc(100vh - 2rem);">
           <iframe
-            src="https://trade.polariumbroker.com/register?aff=760703&aff_model=revenue&afftrack=harveyia"
-            class="w-full h-[60vh] min-h-[300px] md:h-full md:min-h-0"
+            src="https://trade.polariumbroker.com/en/register?aff=760703&aff_model=revenue&afftrack=harveyia"
+            class="w-full h-full min-h-screen md:min-h-0"
             title="Polarium Broker"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -28,22 +23,16 @@
           <div class="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10 rounded-xl"></div>
           <div class="absolute -inset-1 bg-gradient-to-r from-amber-400/20 via-amber-500/20 to-amber-400/20 rounded-xl blur-sm -z-10"></div>
 
-          <div class="relative p-4 border-b border-amber-400/30">
+            <div class="relative p-4 border-b border-amber-400/30">
             <div class="flex flex-col items-center justify-center mb-4 space-y-2">
               <div class="flex items-center space-x-3">
-                <div class="relative">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-amber-400"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                  <div class="absolute inset-0 w-8 h-8 text-amber-400 animate-ping opacity-20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-                  </div>
-                </div>
-                <div class="text-amber-400 font-bold text-lg tracking-wider">HARVEYIA</div>
+              <img src="@/assets/logo.png" alt="Logo" class="h-8 w-auto object-contain" />
               </div>
-              <h1 class="text-center text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 tracking-wider mt-2">
-                BEM-VINDO TRADER
+              <h1 class="text-center text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 tracking-wider mt-6">
+              BEM-VINDO TRADER
               </h1>
             </div>
-          </div>
+            </div>
           
           <!-- Responsivo: Adicione overflow-auto e ajuste padding -->
           <div class="flex-1 p-2 md:p-6 space-y-6 overflow-auto">
