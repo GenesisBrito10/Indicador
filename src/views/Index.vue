@@ -6,10 +6,10 @@
     <div class="w-full h-full max-w-[2000px] mx-auto flex flex-col md:flex-row gap-4 p-2 md:p-4">
       
       <div class="flex-1 flex flex-col">
-        <div class="w-full flex-1 rounded-xl overflow-hidden shadow-2xl border border-amber-500/30 backdrop-blur-sm flex" style="min-height:calc(100vh - 2rem);">
+        <div class="w-full rounded-xl overflow-hidden shadow-2xl border border-amber-500/30 backdrop-blur-sm flex" style="height:500px; min-height:unset;">
           <iframe
             src="https://trade.polariumbroker.com/en/register?aff=760703&aff_model=revenue&afftrack=harveyia"
-            class="w-full h-full min-h-screen md:min-h-0"
+            class="w-full h-full md:h-full min-h-0"
             title="Polarium Broker"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
